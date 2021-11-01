@@ -33,7 +33,7 @@ async function run() {
       const query = { _id: ObjectId(req.params.id) };
       const result = await collection.findOne(query);
       console.log(result);
-      res.send(result);
+      res.json(result);
     });
 
     // PUT api
@@ -62,7 +62,7 @@ async function run() {
       const query = { _id: ObjectId(req.params.id) };
       const result = await collection.deleteOne(query);
       console.log(result);
-      res.send(result);
+      res.json(result);
     });
   } finally {
     // await client.close();
@@ -71,7 +71,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("server running");
+  res.json("server running");
   console.log("server running");
 });
 // listeningggg

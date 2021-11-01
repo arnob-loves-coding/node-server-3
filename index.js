@@ -24,7 +24,7 @@ async function run() {
     await client.connect();
     const collection = client.db("practice").collection("practiceCollection");
 
-    // GET apii
+    // GET apiiii
     app.get("/users", async (req, res) => {
       const cursorrrr = await collection.find({}).toArray();
       res.json(cursorrrr);
